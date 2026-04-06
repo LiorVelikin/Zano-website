@@ -1155,6 +1155,7 @@ const rvObs=new IntersectionObserver(entries=>{
   entries.forEach(en=>{
     if(!en.isIntersecting)return;
     en.target.classList.add('in');
+    en.target.querySelectorAll('video').forEach(v=>v.play().catch(()=>{}));
     en.target.querySelectorAll('[data-target]').forEach(el=>{ const end=+el.dataset.target; let cur=0,step=end/55; const t=setInterval(()=>{ cur+=step; if(cur>=end){cur=end;clearInterval(t);} el.textContent=Math.floor(cur)+'+'; },28); });
   });
 },{threshold:.1});
