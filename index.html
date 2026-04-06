@@ -11,7 +11,7 @@
 
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior: smooth; overflow-x: hidden; }
 
     :root {
       --white:    #F8F7F2;
@@ -1171,6 +1171,12 @@ function initVid(container,video,btn){
 }
 document.querySelectorAll('.vc').forEach(c=>{ const v=c.querySelector('video'),b=c.querySelector('.vc-snd'); if(v&&b) initVid(c,v,b); });
 document.querySelectorAll('.mus-cell').forEach(c=>{ const v=c.querySelector('video'),b=c.querySelector('.mus-snd'); if(v&&b) initVid(c,v,b); });
+
+/* ── IOS VIDEO AUTOPLAY UNLOCK ───────────────────────────── */
+document.addEventListener('touchstart',function unlock(){
+  document.querySelectorAll('video').forEach(v=>{ v.play().catch(()=>{}); });
+  document.removeEventListener('touchstart',unlock);
+},{once:true,passive:true});
 
 /* ── HORIZONTAL SCROLL DRAG ──────────────────────────────── */
 document.querySelectorAll('.hscroll').forEach(el=>{
