@@ -65,6 +65,10 @@
     body.hovered  .cur-r { width: 60px; height: 60px; }
     body.hovered.dark-cur  .cur-r { border-color: rgba(248,247,242,.8); }
     body.hovered:not(.dark-cur) .cur-r { border-color: rgba(60,58,54,.7); }
+    @media (hover: none) {
+      .cur-d, .cur-r { display: none !important; }
+      body, button, .vc, .mus-cell { cursor: auto; }
+    }
 
     /* ─── GRAIN ───────────────────────────────────── */
     #grain { position: fixed; inset: 0; pointer-events: none; z-index: 9000; }
@@ -975,8 +979,8 @@
       <div>
         <span class="sec-tag">06 — אודות</span>
         <h2 class="sec-title" style="color:var(--charcoal)">Or<br>Zano.</h2>
-        <p class="about-body"><strong>Or Zano</strong> הוא צלם ובמאי ויזואלי מתל אביב, מתמחה בקליפים מוזיקליים, קמפיינים אופנה ותוכן מותגי.</p>
-        <p class="about-body">עם עין אסתטית חדה ותשוקה לסיפור ויזואלי, Or עובד עם אמנים, מותגים ועסקים שרוצים להשאיר רושם.</p>
+        <p class="about-body"><strong>אור זנו</strong> הוא צלם ובמאי ויזואלי מתל אביב, מתמחה בקליפים מוזיקליים, קמפיינים אופנה ותוכן מותגי.</p>
+        <p class="about-body">עם עין אסתטית חדה ותשוקה לסיפור ויזואלי, אור עובד עם אמנים, מותגים ועסקים שרוצים להשאיר רושם.</p>
         <blockquote class="about-quote">"כל פרויקט מתחיל בשאלה אחת: מה אנחנו רוצים שהצופה יירגיש?"</blockquote>
         <div class="about-stats">
           <div><span class="stat-n" data-target="50">0+</span><span class="stat-l">פרויקטים</span></div>
